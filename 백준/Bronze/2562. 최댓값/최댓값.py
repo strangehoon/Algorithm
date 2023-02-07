@@ -1,5 +1,3 @@
-data = []
-for i in range(9):
-    data.append(int(input()))
+data = [int(input()) for i in range(9)]
 print(max(data))
 print(data.index(max(data))+1)
