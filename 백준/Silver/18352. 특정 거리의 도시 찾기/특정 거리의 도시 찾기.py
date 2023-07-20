@@ -8,7 +8,6 @@ for i in range(1, M+1):
     a, b = map(int, sys.stdin.readline().split())
     graph[a].append(b)
 result[X] = 0
-count = 0
 queue = deque([X])
 flag = 0
 while(queue):
