@@ -14,9 +14,8 @@ for i in range(M):
 def dfs(V):
     visited_dfs[V-1] = True
     result_dfs.append(V)
-    tem_list = graph[V-1]
-    tem_list.sort()
-    for x in tem_list:
+
+    for x in graph[V-1]:
         if visited_dfs[x-1] == False:
             dfs(x)
 
@@ -26,12 +25,14 @@ def bfs(V):
     while(queue):
         x = queue.popleft()
         result_bfs.append(x)
-        tem_list = graph[x-1]
-        tem_list.sort()
-        for i in tem_list:
+
+        for i in graph[x-1]:
             if visited_bfs[i-1] == False:
                 visited_bfs[i-1] = True
                 queue.append(i)
+
+for x in graph:
+    x.sort()
 
 dfs(V)
 bfs(V)
