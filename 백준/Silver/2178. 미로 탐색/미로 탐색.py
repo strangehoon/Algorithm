@@ -18,11 +18,10 @@ def bfs():
             nx = x+dx[i]
             ny = y+dy[i]
             if nx == N-1 and ny ==M-1:
-                print(c+1)
-                return
+                return c+1
             if 0<=nx<N and 0<=ny<M:
                 if graph[nx][ny]==1 and visited[nx][ny] ==False:
                     visited[nx][ny] = True
                     queue.append((nx,ny,c+1))
-
-bfs()
+            
+print(bfs())
