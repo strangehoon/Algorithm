@@ -28,6 +28,12 @@ def bfs(x,y):
 result = 0
 for x in range(h):
     for y in range(w):
+        if 0<x<h-1:
+            if graph[x-1][y] == 'L' and graph[x+1][y] == 'L':
+                continue
+        if 0<y<w-1:
+            if graph[x][y-1] == 'L' and graph[x][y+1] =='L':
+                continue
         if graph[x][y] == 'L':
             if result < bfs(x,y):
                 result = bfs(x,y)
