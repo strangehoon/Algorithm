@@ -1,7 +1,8 @@
+import sys
 N, M = map(int, input().split())
 graph = []
 for i in range(N):
-    graph.append(list(map(int, input().split())))
+    graph.append(list(map(int, sys.stdin.readline().split())))
 
 result = [[0]*M for _ in range(N)]
 
