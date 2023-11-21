@@ -5,35 +5,13 @@ def solution(survey, choices):
         s = survey[i]
         c = choices[i]
         if c < 4:
-            if c == 1:
-                alpha_dict[s[0]] += 3
-            elif c == 2:
-                alpha_dict[s[0]] += 2
-            elif c == 3:
-                alpha_dict[s[0]] += 1
-        elif c == 4:
-            continue
+            alpha_dict[s[0]] += (4-c)
         elif c > 4:
             alpha_dict[s[1]] += (c-4)
-
-    if alpha_dict['R']>=alpha_dict['T']:
-        result += 'R'
-    else:
-        result += 'T'
-
-    if alpha_dict['C'] >= alpha_dict['F']:
-        result += 'C'
-    else:
-        result += 'F'
-
-    if alpha_dict['J']>=alpha_dict['M']:
-        result += 'J'
-    else:
-        result += 'M'
-
-    if alpha_dict['A']>=alpha_dict['N']:
-        result += 'A'
-    else:
-        result += 'N'
-
+    alpha_list = list(alpha_dict.items())
+    for i in range(0, 8, 2):
+        if alpha_list[i][1]>=alpha_list[i+1][1]:
+            result+=alpha_list[i][0]
+        else:
+            result+=alpha_list[i+1][0]
     return result
